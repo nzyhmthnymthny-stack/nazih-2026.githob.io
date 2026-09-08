@@ -1,0 +1,73 @@
+<!-- ========================================================
+   مشروع مادة تصميم الويب - صفحة قائمة الطعام والمنتجات (Services)
+   عمل الطالب: نزيه الذيب
+   ======================================================== -->
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قائمة الطعام - مطعم السرايا الفاخر</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <h2>السرايا الفاخر</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about.html">من نحن</a></li>
+                <li><a href="services.html" class="active">قائمة الطعام</a></li>
+                <li><a href="contact.html">تواصل معنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2 style="text-align: center; margin-top: 40px; color: #c0392b;">قائمتنا الفاخرة</h2>
+        
+        <!-- [مفهوم CSS Grid] - استعراض الوجبات بالريال اليمني بشكل شبكي متناسق -->
+        <section class="menu-grid">
+            
+            <!-- بطاقة الوجبة الأولى -->
+            <div class="menu-item">
+                <img src="https://unsplash.com" alt="وجبة مندي فاخر">
+                <div class="menu-info">
+                    <h3>مندي لحم بلدي فاخر</h3>
+                    <p>لحم بلدي طازج مطهو تحت الأرض بالطريقة التقليدية مع الأرز البسمتي المبهر.</p>
+                    <div class="price">12,500 ر.ي</div>
+                </div>
+            </div>
+
+            <!-- بطاقة الوجبة الثانية -->
+            <div class="menu-item">
+                <img src="https://unsplash.com" alt="مشاوي مشكلة">
+                <div class="menu-info">
+                    <h3>مشاوي السرايا المشكلة</h3>
+                    <p>تشكيلة فاخرة من الكباب، الشيش طاووق، والأوصال المشوية على الفحم الطبيعي.</p>
+                    <div class="price">9,000 ر.ي</div>
+                </div>
+            </div>
+
+            <!-- بطاقة الوجبة الثالثة -->
+            <div class="menu-item">
+                <img src="https://unsplash.com" alt="حلوى بنت الصحن">
+                <div class="menu-info">
+                    <h3>بنت الصحن بالسمن والعسل</h3>
+                    <p>الفطيرة اليمنية التقليدية الهشة، تحضر بالسمن البلدي والعسل الدوعني الأصيل.</p>
+                    <div class="price">4,500 ر.ي</div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2026 - مطعم السرايا الفاخر | تصميم الطالب: نزيه الذيب</p>
+    </footer>
+
+</body>
+</html>

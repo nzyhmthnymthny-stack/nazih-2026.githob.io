@@ -1,0 +1,232 @@
+/* ========================================================
+   مشروع تصميم الويب النهائي - مادة HTML & CSS
+   إعداد الطالب: نزيه الذيب
+   الفكرة: موقع مطعم السرايا الفاخر
+   ======================================================== */
+
+/* إعدادات الخطوط والألوان العامة للموقع */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    direction: rtl; /* جعل اتجاه الموقع من اليمين لليسار ليناسب اللغة العربية */
+    background-color: #f9f9f9;
+    color: #2c3e50;
+}
+
+/* [شرط Flexbox] - شريط التنقل العلوي */
+header {
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* [تأثير Box Shadow المطلوب] */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex; /* تفعيل الفليكس بوكس لتوزيع الشعار والروابط */
+    justify-content: space-between; /* ترك مسافة تلقائية بين الشعار والقائمة */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 18px 20px;
+}
+
+.logo h2 {
+    color: #c0392b; /* لون فخم للمطعم (أحمر داكن) */
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex; /* استخدام الفليكس بوكس لترتيب أزرار القائمة بجانب بعضها */
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    transition: color 0.3s ease; /* [تأثير Transition المطلوب لنعومة الحركة] */
+}
+
+/* [تأثير Hover المطلوب للروابط] */
+.nav-links a:hover, .nav-links a.active {
+    color: #c0392b; 
+}
+
+/* قسم الواجهة الرئيسية (Hero Section) */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://unsplash.com') no-repeat center center/cover;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #c0392b;
+    color: #fff;
+    padding: 12px 35px;
+    text-decoration: none;
+    border-radius: 25px; /* [تأثير Border Radius المطلوب للحواف الدائرية] */
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #a82c1e;
+}
+
+/* [شرط Flexbox] - قسم ميزات المطعم في الرئيسية */
+.features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* للسماح بنزول العناصر للأسفل في الشاشات الصغيرة */
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    gap: 25px;
+}
+
+.feat-box {
+    flex: 1;
+    min-width: 280px;
+    text-align: center;
+    padding: 35px;
+    background: #fff;
+    border-radius: 12px; /* حواف دائرية */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.04); /* ظل خفيف */
+}
+
+.feat-box h3 {
+    margin-bottom: 12px;
+    color: #c0392b;
+}
+
+/* أقسام صفحات (من نحن) و (تواصل معنا) */
+.about-section, .contact-section {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 40px 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.about-section p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: #555;
+    margin-top: 20px;
+}
+
+/* [شرط CSS Grid] - شبكة عرض قائمة الطعام */
+.menu-grid {
+    display: grid; /* تفعيل نظام الشبكة */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* تقسيم تلقائي متجاوب */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.menu-item {
+    background: #fff;
+    border-radius: 15px; /* حواف دائرية للبطاقة */
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-8px); /* تأثير حركة إضافي وجميل عند تمرير الماوس */
+}
+
+.menu-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.menu-info {
+    padding: 22px;
+    text-align: center;
+}
+
+.menu-info h3 {
+    margin-bottom: 8px;
+    color: #2c3e50;
+}
+
+.price {
+    color: #c0392b;
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-top: 12px;
+}
+
+/* نموذج استمارة التواصل (Contact Form) */
+.form-group {
+    margin-bottom: 22px;
+    text-align: right;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: #c0392b; /* تغيير لون الحواف عند الكتابة */
+}
+
+/* تذييل الموقع (Footer) */
+footer {
+    background-color: #1a252f;
+    color: #fff;
+    text-align: center;
+    padding: 25px;
+    margin-top: 8px;
+}
+
+/* [شرط Media Queries] - جعل الموقع متجاوباً بالكامل مع الجوال */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* تحويل القائمة لوضع عمودي في الشاشات الصغيرة */
+        gap: 15px;
+    }
+    .hero h1 {
+        font-size: 2.2rem; /* تصغير الخط ليناسب الجوال */
+    }
+}
